@@ -68,11 +68,11 @@ async def on_message(message):
 
     #時刻になったらお知らせ
     global TIMEID
-    Timetxt = ["T 予定を立てなさい!","T 時間になったら呼んで"]
+    Timetxt = ["-T 予定を立てなさい!","-T 時間になったら呼んで","-T time"]
     if message.content in Timetxt or message.author.id in TIMEID:await TIMER(message)
 
     #人狼ゲーム
-    Jinro_txt = ["T 人狼がしたい","T　人狼しようぜ"]
+    Jinro_txt = ["-T 人狼がしたい","-T　人狼しようぜ","-T j"]
     global Playing_check,J_attend,embed_GameStart,J_Mahou,J_Kaitou,job_dic,J_member,J_memberid,Jinro_list,Kaitou_list,Uranai_list,J_card,J_Uraned,Votes,Vote,J_Kaitouyer,J_Kaitoued,J_Uranayer,Voted
 
     if message.content in Jinro_txt and Playing_check==False:
