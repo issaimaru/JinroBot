@@ -36,7 +36,7 @@ class Jinro:
             color_message=0xff0000
             if (len(mem)>=3 and len(mem)<=6):color_message=0x4169e1
 
-            startmessage="ワンナイト人狼をプレイする人は三分間でこのメッセージにリアクションしてください"
+            startmessage="ワンナイト人狼をプレイする人は一分間でこのメッセージにリアクションしてください"
             embed.description=startmessage+"\n参加者:"+str(mem)
             await attend.edit(embed=embed)
 
@@ -59,7 +59,7 @@ class Jinro:
 
     async def moderator(attend,embed,mem,memid,message,client,Jinro_list,Uranai_list,Kaitou_list,J_card,job_dic):
         embed.title="ワンナイト人狼の参加者募集終了!"
-        embed.description="三分が経過し、受付が終了しました。"
+        embed.description="一分が経過し、受付が終了しました。"
         await attend.edit(embed=embed)
 
         if len(mem) < 3:
