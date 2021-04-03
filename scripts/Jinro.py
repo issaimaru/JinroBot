@@ -19,7 +19,7 @@ class Jinro:
     async def run(message):
         GameSIGN = "\N{video game}"
         await message.add_reaction(GameSIGN)
-        startmessage="ワンナイト人狼をプレイする人は1分間でこのメッセージにリアクションしてください"
+        startmessage="ワンナイト人狼をプレイする人は一分間でこのメッセージにリアクションしてください"
         embed_GameStart = discord.Embed(title="ワンナイト人狼の参加者を募集中",description=startmessage+"\n参加者:[]",colour=0xff0000)
         embed_GameStart.set_thumbnail(url="https://pics.prcm.jp/1017ac6805b15/82016574/jpeg/82016574_220x220.jpeg")
         messagerid=await message.channel.send(embed=embed_GameStart)
@@ -51,7 +51,7 @@ class Jinro:
             color_message=0xff0000
             if (len(mem)>=3 and len(mem)<=6):color_message=0x4169e1
 
-            startmessage="ワンナイト人狼をプレイする人は三分間でこのメッセージにリアクションしてください"
+            startmessage="ワンナイト人狼をプレイする人は一分間でこのメッセージにリアクションしてください"
             embed.description=startmessage+"\n参加者:"+str(mem)
             await attend.edit(embed=embed)
 
