@@ -4,7 +4,7 @@
 
 #Created by Issaimaru
 
-#Created at 2021-04-03
+#Created at 2021-04-05
 
 #######################
 
@@ -38,6 +38,7 @@ class Jinro:
 
             startmessage="ワンナイト人狼をプレイする人は一分間でこのメッセージにリアクションしてください"
             embed.description=startmessage+"\n参加者:"+str(mem)
+            embed.colour=color_message
             await attend.edit(embed=embed)
 
     #リアクションが追加されたときに実行する関数
@@ -53,6 +54,7 @@ class Jinro:
 
             startmessage="ワンナイト人狼をプレイする人は一分間でこのメッセージにリアクションしてください"
             embed.description=startmessage+"\n参加者:"+str(mem)
+            embed.colour=color_message
             await attend.edit(embed=embed)
 
     #リアクションが削除されたときに実行する関数
@@ -254,4 +256,3 @@ class Jinro:
         await message.channel.send(embed=embed)
 
     #結果を通知する関数
-
