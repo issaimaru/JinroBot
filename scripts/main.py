@@ -19,7 +19,7 @@ from collections import defaultdict
 from statistics import mode
 user_reaction_dic = defaultdict(dict)
 
-TOKEN = "ODExNzk0ODE4MDEwODQxMTA5.YC3Y1w.w4fvcnZip3j_bi7czNDiqY4rjlw"
+TOKEN = "Your TOKEN"
 
 intents = discord.Intents.default()
 intents.members=True#membersがdefaultではFalseなのでTrueにする
@@ -138,17 +138,17 @@ async def End(message):
     J_Kaitouyer=False
     J_kaitou=False
     Votes=False
-    J_member=[]
-    J_memberid=[]
-    J_Uraned=[]
-    J_kaitoued=[]
-    Jinro_list=[]
-    Uranai_list=[]
-    Kaitou_list=[]
-    Vote=[]
-    Voted=[]
+    J_member.clear()
+    J_memberid.clear()
+    J_Uraned.clear()
+    J_kaitoued.clear()
+    Jinro_list.clear()
+    Uranai_list.clear()
+    Kaitou_list.clear()
+    Vote.clear()
+    Voted.clear()
     J_attend=0
-    job_dic={}
+    job_dic.clear()
     J_card = ["人狼","人狼","占い師","怪盗"]
     #すべてのグローバル変数を初期値に戻す
     await client.change_presence(activity=None)
