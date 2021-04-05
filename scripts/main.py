@@ -4,7 +4,7 @@
 
 #Created by Issaimaru
 
-#Created at 2021-04-03
+#Created at 2021-04-05
 
 #######################
 
@@ -19,7 +19,7 @@ from collections import defaultdict
 from statistics import mode
 user_reaction_dic = defaultdict(dict)
 
-TOKEN = "Your TOKEN"
+TOKEN = "ODExNzk0ODE4MDEwODQxMTA5.YC3Y1w.w4fvcnZip3j_bi7czNDiqY4rjlw"
 
 intents = discord.Intents.default()
 intents.members=True#membersがdefaultではFalseなのでTrueにする
@@ -40,7 +40,8 @@ J_kaitoued=[]
 Jinro_list=[]
 Uranai_list=[]
 Kaitou_list=[]
-Vote=Voted=[]
+Vote=[]
+Voted=[]
 J_attend=0
 job_dic={}
 J_card = ["人狼","人狼","占い師","怪盗"]
@@ -107,7 +108,7 @@ async def on_message(message):
         await asyncio.sleep(5)#結果発表を見る時間
         await End(message)
 
-    elif message.content in Jinro_txt and Playing_check==True:await message.channel.send("他の方がゲームをプレイ中です...")
+    elif message.content in Jinro_txt and (Playing_check==True or J_member):await message.channel.send("他の方がゲームをプレイ中です...")
 
     if J_Mahou==True and message.author.id in Uranai_list:J_Uranayer=await Jinro.Mahou_job(message,J_card,J_member,J_memberid,J_Uranayer,job_dic,J_Uraned)#魔法使いの処理
     if J_kaitou==True and message.author.id in Kaitou_list:J_Kaitouyer=await Jinro.Kaitou_Job(message,J_member,J_memberid,J_Kaitouyer,job_dic,Jinro_list,J_Kaitoued)#怪盗の処理
@@ -144,7 +145,8 @@ async def End(message):
     Jinro_list=[]
     Uranai_list=[]
     Kaitou_list=[]
-    Vote=Voted=[]
+    Vote=[]
+    Voted=[]
     J_attend=0
     job_dic={}
     J_card = ["人狼","人狼","占い師","怪盗"]
