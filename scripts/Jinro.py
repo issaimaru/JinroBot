@@ -78,7 +78,7 @@ class Jinro:
         await Jinro.card(len(mem),J_card)#人数の分だけ村人を追加してやる
         job_dic=await Jinro.random(len(mem),J_card,mem,memid,Jinro_list,Uranai_list,Kaitou_list)
         
-        await Jinro.send_message(len(mem),job_dic,memid,J_card,client)
+        await Jinro.send_message(len(mem),job_dic,memid,J_card,client,Jinro_list)
 
         await message.channel.send("ユーザーの役職が決まりました！\n夜になるまでに役職を確認してください!")
         await asyncio.sleep(20)
@@ -109,7 +109,7 @@ class Jinro:
 
     #ランダムに役職を決める関数
 
-    async def send_message(number,job_dic,memid,j_card,client):
+    async def send_message(number,job_dic,memid,j_card,client,Jinro_list):
         for usernom in range(number):
             user = client.get_user(memid[usernom])
             job = job_dic[memid[usernom]]
@@ -175,7 +175,6 @@ class Jinro:
 
     async def Kaitou_Job(message,mem,memid,bools,job_dic,jinro_list,J_Kaitoued):
         if message.author.id in J_Kaitoued:return False
-
         embed=discord.Embed(title="怪盗",colour=0x0000ff)
         embed.set_thumbnail(url="https://pbs.twimg.com/media/DhlKk0dV4AAoT_0?format=jpg&name=large")
 
@@ -187,9 +186,9 @@ class Jinro:
                     jinro_list.remove(mem[num])
                     job_dic[memid[num]]="怪盗"
 
-                    find=memid.find(message.author.id)
-                    jinro_list.append(mem[find])
-                    job_dic[memid[find]]="人狼"
+
+                    jinro_list.append(message.author.name)
+                    job_dic[message.author.id]="人狼"
                 embed.description="対象のカードを盗んでお前は"+job+"になったぜ!"
                 await message.author.send(embed=embed)
                 J_Kaitoued.append(message.author.id)
