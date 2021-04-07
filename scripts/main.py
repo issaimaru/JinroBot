@@ -4,7 +4,7 @@
 
 #Created by Issaimaru
 
-#Created at 2021-04-05
+#Created at 2021-04-06
 
 #######################
 
@@ -74,9 +74,9 @@ async def on_message(message):
 
     #人狼ゲーム
     Jinro_txt = ["-T 人狼がしたい","-T　人狼しようぜ","-T j"]
-    global Playing_check,J_attend,embed_GameStart,J_Mahou,J_Kaitou,job_dic,J_member,J_memberid,Jinro_list,Kaitou_list,Uranai_list,J_card,J_Uraned,Votes,Vote,J_Kaitouyer,J_Kaitoued,J_Uranayer,Voted
+    global Playing_check,J_attend,embed_GameStart,J_Mahou,J_kaitou,job_dic,J_member,J_memberid,Jinro_list,Kaitou_list,Uranai_list,J_card,J_Uraned,Votes,Vote,J_Kaitouyer,J_kaitoued,J_Uranayer,Voted
 
-    if message.content in Jinro_txt and Playing_check==False:
+    if message.content in Jinro_txt and Playing_check==False and len(J_member)==0:
         await client.change_presence(activity=discord.Game(name="人狼の司会者", type=1))#ゲームアクティビティを変更する
         Playing_check=True
         returns=await Jinro.run(message)
@@ -94,9 +94,9 @@ async def on_message(message):
         await asyncio.sleep(30)#魔法使いの行動時間
         J_Mahou=False
         await message.channel.send("次に怪盗の方は行動してください(30秒間)")
-        J_Kaitou=True
+        J_kaitou=True
         await asyncio.sleep(30)#怪盗の行動時間
-        J_Kaitou=False
+        J_kaitou=False
         embed=discord.Embed(title="議論開始",description="昼になりました。\n参加者は議論を開始してください\n制限時間は5分間です",colour=0x7cfc00)
         embed.set_thumbnail(url="https://cdn-ak.f.st-hatena.com/images/fotolife/A/AnnieAreYou/20170111/20170111151052.jpg")
         await message.channel.send(embed=embed)
@@ -108,10 +108,10 @@ async def on_message(message):
         await asyncio.sleep(5)#結果発表を見る時間
         await End(message)
 
-    elif message.content in Jinro_txt and (Playing_check==True or J_member):await message.channel.send("他の方がゲームをプレイ中です...")
+    elif message.content in Jinro_txt and (Playing_check==True or len(J_member)>0):await message.channel.send("他の方がゲームをプレイ中です...")
 
     if J_Mahou==True and message.author.id in Uranai_list:J_Uranayer=await Jinro.Mahou_job(message,J_card,J_member,J_memberid,J_Uranayer,job_dic,J_Uraned)#魔法使いの処理
-    if J_kaitou==True and message.author.id in Kaitou_list:J_Kaitouyer=await Jinro.Kaitou_Job(message,J_member,J_memberid,J_Kaitouyer,job_dic,Jinro_list,J_Kaitoued)#怪盗の処理
+    if J_kaitou==True and message.author.id in Kaitou_list:J_Kaitouyer=await Jinro.Kaitou_Job(message,J_member,J_memberid,J_Kaitouyer,job_dic,Jinro_list,J_kaitoued)#怪盗の処理
 
     if Votes==True and message.author.id in J_memberid and not message.author.id in Voted:await Jinro.Votes_receive(message,J_member,Vote,Voted)
     elif Votes==True and message.author.id in Voted:await message.author.send("あなたはすでに投票しています!")
