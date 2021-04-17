@@ -4,7 +4,7 @@
 
 #Created by Issaimaru
 
-#Created at 2021-04-07
+#Created at 2021-04-17(Update)
 
 #######################
 
@@ -114,7 +114,7 @@ async def on_message(message):
     if J_kaitou==True and message.author.id in Kaitou_list:J_Kaitouyer=await Jinro.Kaitou_Job(message,J_member,J_memberid,J_Kaitouyer,job_dic,Jinro_list,J_kaitoued)#怪盗の処理
 
     if Votes==True and message.author.id in J_memberid and not message.author.id in Voted:await Jinro.Votes_receive(message,J_member,Vote,Voted)
-    elif Votes==True and message.author.id in Voted:await message.author.send("あなたはすでに投票しています!")
+    elif Votes==True and message.author.id in Voted and isinstance(message.channel, discord.DMChannel):await message.author.send("あなたはすでに投票しています!")
 
 
 @client.event
@@ -171,6 +171,7 @@ async def TIMER(message):
             time_real = datetime.datetime.now()#現在時刻
             if time_plan<time_real :raise TimeWarning("現在時刻よりも過去の時間設定になっています!")
             time_sleep = (time_plan - time_real).seconds#待つ秒数を設定する
+            if time_sleep>60*60*24:raise TimeWarning("約24時間おきにBotが再起動されるため、その時刻設定は無効になっています!")
             TIMEID.clear()#予定は一人しかできない
             await asyncio.sleep(time_sleep)#指定された時間まで待つ
             await message.channel.send("予定の時刻になりました!")
