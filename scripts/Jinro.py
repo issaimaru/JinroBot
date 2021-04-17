@@ -4,7 +4,7 @@
 
 #Created by Issaimaru
 
-#Created at 2021-04-07
+#Created at 2021-04-17(Update)
 
 #######################
 
@@ -143,6 +143,7 @@ class Jinro:
 
     async def Mahou_job(message,J_card,mem,memid,bools,job_dic,J_Uraned):
         if message.author.id in J_Uraned:return False
+        if not isinstance(message.channel, discord.DMChannel):return False
 
         embed=discord.Embed(title="天の声",colour=0xba55d3)
         embed.set_thumbnail(url="http://www.nihon-net.com/wp-content/uploads/2016/04/%E7%A5%9E%E6%A7%98.jpg")
@@ -175,6 +176,7 @@ class Jinro:
 
     async def Kaitou_Job(message,mem,memid,bools,job_dic,jinro_list,J_Kaitoued):
         if message.author.id in J_Kaitoued:return False
+        if not isinstance(message.channel, discord.DMChannel):return False
         embed=discord.Embed(title="怪盗",colour=0x0000ff)
         embed.set_thumbnail(url="https://pbs.twimg.com/media/DhlKk0dV4AAoT_0?format=jpg&name=large")
 
@@ -227,6 +229,7 @@ class Jinro:
 
 
     async def Votes_receive(message,mem,vote,voteuser):
+        if not isinstance(message.channel, discord.DMChannel):return
         try:
             num=int(message.content)
             vote.append(mem[num])#投票された人を記録
@@ -238,7 +241,7 @@ class Jinro:
 
     async def Judge(message,vote,Jinro_list):
         embed=discord.Embed(title="結果発表",colour=0xdc143c)
-        embed.set_thumbnail(url="https://i.ytimg.com/vi/xUgz9qpmdzg/maxresdefault.jpg")
+        embed.set_thumbnail(url="https://ogre.natalie.mu/media/news/owarai/2016/1026/1026_dt_001.jpg?impolicy=lt&imwidth=1200")
         if not vote:
             embed.description="無投票でしたので平和村投票とみなされました\n"
             if not Jinro_list:
