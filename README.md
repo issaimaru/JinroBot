@@ -7,7 +7,7 @@ Discordのチャネルでワンナイト人狼をすることができるよう�
 3. [Setting.txt]の*Token*に、コピーしたトークンを貼り付ける
 4. main.pyを起動する
 
-##Setting.txtの使い方
+## Setting.txtの使い方
 <img src="https://drive.google.com/file/d/1SbqnN9ons4aqr6YttE_Eilf4tmsL_Ic6/view?usp=sharing" alt="Setting.txtの全体図" title="Setting.txtの全体図" width="200" height="200">
 
 
