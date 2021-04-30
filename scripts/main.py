@@ -4,7 +4,11 @@
 
 #Created by Issaimaru
 
+<<<<<<< HEAD
 #Created at 2021-04-30(Update)
+=======
+#Created at 2021-04-17(Update)
+>>>>>>> origin/master
 
 #######################
 
@@ -14,20 +18,31 @@ import datetime
 import time
 import asyncio
 import random
+<<<<<<< HEAD
 import linecache
+=======
+>>>>>>> origin/master
 from Jinro import Jinro
 from collections import defaultdict
 from statistics import mode
 user_reaction_dic = defaultdict(dict)
 
+<<<<<<< HEAD
 _TOKEN=linecache.getline('Setting.txt',9).split(':')
 TOKEN = _TOKEN[1]
+=======
+TOKEN = "Your TOKEN"
+>>>>>>> origin/master
 
 intents = discord.Intents.default()
 intents.members=True#membersがdefaultではFalseなのでTrueにする
 client = discord.Client(intents=intents)
 
 #グローバル変数
+<<<<<<< HEAD
+=======
+TIMEID=[]
+>>>>>>> origin/master
 Playing_check=False
 J_Mahou=False
 J_Uranayer=False
@@ -67,6 +82,15 @@ async def on_message(message):
     if message.content in Hello: await message.channel.send(user_name + ",こんにちは!")
     if message.content in Night: await message.channel.send(user_name + ",おやすみなさい!")
 
+<<<<<<< HEAD
+=======
+
+    #時刻になったらお知らせ
+    global TIMEID
+    Timetxt = ["-T 予定を立てなさい!","-T 時間になったら呼んで","-T time"]
+    if message.content in Timetxt or message.author.id in TIMEID:await TIMER(message)
+
+>>>>>>> origin/master
     #人狼ゲーム
     Jinro_txt = ["-T 人狼がしたい","-T　人狼しようぜ","-T j"]
     global Playing_check,J_attend,embed_GameStart,J_Mahou,J_kaitou,job_dic,J_member,J_memberid,Jinro_list,Kaitou_list,Uranai_list,J_card,J_Uraned,Votes,Vote,J_Kaitouyer,J_kaitoued,J_Uranayer,Voted
@@ -93,8 +117,12 @@ async def on_message(message):
         await asyncio.sleep(30)#怪盗の行動時間
         J_kaitou=False
         embed=discord.Embed(title="議論開始",description="昼になりました。\n参加者は議論を開始してください\n制限時間は5分間です",colour=0x7cfc00)
+<<<<<<< HEAD
         image=linecache.getline('Setting.txt',15).split('>')
         embed.set_thumbnail(url=image[1])
+=======
+        embed.set_thumbnail(url="https://cdn-ak.f.st-hatena.com/images/fotolife/A/AnnieAreYou/20170111/20170111151052.jpg")
+>>>>>>> origin/master
         await message.channel.send(embed=embed)
         await asyncio.sleep(60*5)#議論の時間
         Votes=await Jinro.Vote_Send(message,J_member,J_memberid,client)#投票用のメッセージを送りつける
@@ -150,5 +178,39 @@ async def End(message):
     await client.change_presence(activity=None)
     await message.channel.send("人狼ゲームが正常終了しました!")
 
+<<<<<<< HEAD
 
 client.run(TOKEN)#指定のトークンのBOTを起動させる
+=======
+async def TIMER(message):
+    global TIMEID
+    if not message.author.id in TIMEID:
+        OKSIGN = "\N{OK Hand Sign}"
+        await message.add_reaction(OKSIGN)
+        TIMEID.append(message.author.id)#予定を立てるようBOTに指示した人のidを記録する
+        return
+
+    if message.author.id in TIMEID:
+        try:
+            plan=(message.content).split("-")
+            x = []
+            for p in plan:x.append(int(p))
+            time_plan = datetime.datetime(x[0],x[1],x[2],x[3],x[4],x[5])#秒数まで指定
+            time_real = datetime.datetime.now()#現在時刻
+            if time_plan<time_real :raise TimeWarning("現在時刻よりも過去の時間設定になっています!")
+            time_sleep = (time_plan - time_real).seconds#待つ秒数を設定する
+            if time_sleep>60*60*24:raise TimeWarning("約24時間おきにBotが再起動されるため、その時刻設定は無効になっています!")
+            TIMEID.clear()#予定は一人しかできない
+            await asyncio.sleep(time_sleep)#指定された時間まで待つ
+            await message.channel.send("予定の時刻になりました!")
+
+        except TimeWarning as e:
+            await message.channel.send(e)
+
+        except:await message.channel.send("予定を立てる構文が間違っている可能性があります\n正しい表記の例:2019-08-31-18-00-00\n(例は2019年8月31日18時00分00秒)")
+
+class TimeWarning(Exception):pass
+
+
+client.run(TOKEN)#指定のトークンのBOTを起動させる
+>>>>>>> origin/master

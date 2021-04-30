@@ -4,7 +4,11 @@
 
 #Created by Issaimaru
 
+<<<<<<< HEAD
 #Created at 2021-04-30(Update)
+=======
+#Created at 2021-04-17(Update)
+>>>>>>> origin/master
 
 #######################
 
@@ -12,7 +16,10 @@
 import random
 import discord
 import asyncio
+<<<<<<< HEAD
 import linecache
+=======
+>>>>>>> origin/master
 from collections import Counter
 
 
@@ -22,8 +29,12 @@ class Jinro:
         await message.add_reaction(GameSIGN)
         startmessage="ワンナイト人狼をプレイする人は一分間でこのメッセージにリアクションしてください"
         embed_GameStart = discord.Embed(title="ワンナイト人狼の参加者を募集中",description=startmessage+"\n参加者:[]",colour=0xff0000)
+<<<<<<< HEAD
         image=linecache.getline('Setting.txt',12).split('>')
         embed_GameStart.set_thumbnail(url=image[1])
+=======
+        embed_GameStart.set_thumbnail(url="https://pics.prcm.jp/1017ac6805b15/82016574/jpeg/82016574_220x220.jpeg")
+>>>>>>> origin/master
         messagerid=await message.channel.send(embed=embed_GameStart)
         return  messagerid,embed_GameStart
 
@@ -118,13 +129,18 @@ class Jinro:
             embed=discord.Embed(title="あなたの役職は" + job +"です")
             
             if (job=="人狼"):
+<<<<<<< HEAD
                 J_image=linecache.getline('Setting.txt',25).split('>')
                 embed.set_thumbnail(url=J_image[1])
+=======
+                embed.set_thumbnail(url="https://pht.qoo-static.com/xpjm7LxwytTwf2gy2n0eVREppHxYC_hBKb_s67wCkqjQxh1egVdANpiM6cZZF1Unazw=w512")
+>>>>>>> origin/master
                 embed.colour=0x000000
                 if (not "人狼" in j_card):embed.description="人狼の人は"+str(Jinro_list)+"です。\nばれないように頑張りましょう!"
                 else:embed.description="人狼はあなた一人です!\nばれないように頑張りましょう!"
 
             if job == "村人":
+<<<<<<< HEAD
                 M_image=linecache.getline('Setting.txt',28).split('>')
                 embed.description="あなたは特別な能力はありません"
                 embed.set_thumbnail(url=M_image[1])
@@ -140,6 +156,20 @@ class Jinro:
                 K_image=linecache.getline('Setting.txt',34).split('>')
                 embed.description="あなたは自分と誰か一人のカードを入れ替えることができます。\n夜になったら数字を打ち込んでください\n1:カードを入れ替える\n2:カードを入れ替えない"
                 embed.set_thumbnail(url=K_image[1])
+=======
+                embed.description="あなたは特別な能力はありません"
+                embed.set_thumbnail(url="https://cdn-ak.f.st-hatena.com/images/fotolife/M/MAABOU/20190225/20190225111336.jpg")
+                embed.colour=0xff8c00
+
+            if job == "占い師":
+                embed.description="あなたは誰にも選ばれなかった２つの役職か、誰か一人のカードを見ることができます。\n夜になったら数字を打ち込んでください\n1:誰にも選ばれなかった２つの役職\n2:誰か一人のカード"
+                embed.set_thumbnail(url="https://animeanime.jp/imgs/p/jtKDOVlKAvjRrNw8SXAVejagI61Nrq_oqaqr/286618.jpg")
+                embed.colour=0xba55d3
+
+            if job == "怪盗":
+                embed.description="あなたは自分と誰か一人のカードを入れ替えることができます。\n夜になったら数字を打ち込んでください\n1:カードを入れ替える\n2:カードを入れ替えない"
+                embed.set_thumbnail(url="https://pbs.twimg.com/media/DhlKk0dV4AAoT_0?format=jpg&name=large")
+>>>>>>> origin/master
                 embed.colour=0x0000ff
          
             await user.send(embed=embed)
@@ -152,8 +182,12 @@ class Jinro:
         if not isinstance(message.channel, discord.DMChannel):return False
 
         embed=discord.Embed(title="天の声",colour=0xba55d3)
+<<<<<<< HEAD
         image=linecache.getline('Setting.txt',38).split('>')
         embed.set_thumbnail(url=image[1])
+=======
+        embed.set_thumbnail(url="http://www.nihon-net.com/wp-content/uploads/2016/04/%E7%A5%9E%E6%A7%98.jpg")
+>>>>>>> origin/master
 
         if bools==True:
             try:
@@ -185,8 +219,12 @@ class Jinro:
         if message.author.id in J_Kaitoued:return False
         if not isinstance(message.channel, discord.DMChannel):return False
         embed=discord.Embed(title="怪盗",colour=0x0000ff)
+<<<<<<< HEAD
         image=linecache.getline('Setting.txt',41).split('>')
         embed.set_thumbnail(url=image[1])
+=======
+        embed.set_thumbnail(url="https://pbs.twimg.com/media/DhlKk0dV4AAoT_0?format=jpg&name=large")
+>>>>>>> origin/master
 
         if bools==True:
             try:
@@ -195,6 +233,11 @@ class Jinro:
                 if job=="人狼":#人狼以外の場合は特に処理が必要でないため必要ない
                     jinro_list.remove(mem[num])
                     job_dic[memid[num]]="怪盗"
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/master
                     jinro_list.append(message.author.name)
                     job_dic[message.author.id]="人狼"
                 embed.description="対象のカードを盗んでお前は"+job+"になったぜ!"
@@ -223,8 +266,12 @@ class Jinro:
 
     async def Vote_Send(message,mem,memid,client):
         embed=discord.Embed(title="投票",description="5分が経過しました。誰が人狼かを投票してください!\n",colour=0x00bfff)
+<<<<<<< HEAD
         image=linecache.getline('Setting.txt',18).split('>')
         embed.set_thumbnail(url=image[1])
+=======
+        embed.set_thumbnail(url="https://stg2-cdn.go2senkyo.com/articles/wp-content/uploads/2018/04/24185912/pixta_37438500_S-600x300.jpg")
+>>>>>>> origin/master
         for num in range(len(mem)):embed.description+=str(num)+":"+mem[num]+"\n"
         embed.description+="無投票の場合:平和村"
         for userid in memid:
@@ -248,8 +295,12 @@ class Jinro:
 
     async def Judge(message,vote,Jinro_list):
         embed=discord.Embed(title="結果発表",colour=0xdc143c)
+<<<<<<< HEAD
         image=linecache.getline('Setting.txt',21).split('>')
         embed.set_thumbnail(url=image[1])
+=======
+        embed.set_thumbnail(url="https://ogre.natalie.mu/media/news/owarai/2016/1026/1026_dt_001.jpg?impolicy=lt&imwidth=1200")
+>>>>>>> origin/master
         if not vote:
             embed.description="無投票でしたので平和村投票とみなされました\n"
             if not Jinro_list:
