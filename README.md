@@ -1,8 +1,11 @@
 # ワンナイト人狼Bot
 Discordのチャネルでワンナイト人狼をすることができるようになります
 
-<b><p>---使い方---<br></b>
-scriptsのmain.pyにある"Your TOKEN"のところに使いたいBOTのトークンを書いて実行すると、動作します。</p>
+## 使い方
+1. [Discord Developer Portal](https://discord.com/developers/applications)にて、Botを作成する
+2. [SETTINGS]-[Bot]のページから、トークンをコピーする
+3. [Setting.txt]の*Token*に、コピーしたトークンを貼り付ける
+4. main.pyを起動する
 
 <b><p>---コマンド一覧---<br></b>
 [-T time],[-T 予定を立てなさい!],[-T 時間になったら呼んで]<br>
