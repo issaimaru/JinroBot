@@ -7,11 +7,13 @@ Discordのチャネルでワンナイト人狼をすることができるよう�
 3. [Setting.txt]の*Token*に、コピーしたトークンを貼り付ける
 4. main.pyを起動する
 
-<b><p>---コマンド一覧---<br></b>
-[-T time],[-T 予定を立てなさい!],[-T 時間になったら呼んで]<br>
-次に入力された日時になると同時に通知をします
-入力の構文は右の通りです:Year-Month-Date-Hour-Minute-Second</p>
+##Setting.txtの使い方
+<img src="https://drive.google.com/file/d/1SbqnN9ons4aqr6YttE_Eilf4tmsL_Ic6/view?usp=sharing" alt="Setting.txtの全体図" title="Setting.txtの全体図" width="200" height="200">
 
-<b><p>[-T j],[-T 人狼がしたい],[-T 人狼しようぜ]<br></b>
+
+
+
+## コマンド
+### [-T j],[-T 人狼がしたい],[-T 人狼しようぜ]<br></b>
 人狼をプレイすることができます。
-尚、最も多い投票を獲得したユーザーが複数人いる場合、その二人のうちどちらかが選ばれる仕様になっています。</p>
+尚、最も多い投票を獲得したユーザーが複数人いる場合、その二人のうちどちらかが選ばれる仕様になっています。
