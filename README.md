@@ -8,7 +8,7 @@ Discordのチャネルでワンナイト人狼をすることができるよう�
 4. main.pyを起動する
 
 ## Setting.txtの使い方
-![alt](https://drive.google.com/file/d/1SbqnN9ons4aqr6YttE_Eilf4tmsL_Ic6/view?usp=sharing)
+![alt](https://dotup.org/uploda/dotup.org2459758.png)
 
 
 
