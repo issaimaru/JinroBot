@@ -10,10 +10,10 @@ Discordのチャネルでワンナイト人狼をすることができるよう�
 ## Setting.txtの使い方
 <img src="https://dotup.org/uploda/dotup.org2459758.png" alt="attach:cat" title="attach:cat" width="530" height="400">
 *このように、各サムネイルのデフォルトURLが貼られているのでこのURLを好みの画像URLに変更することでサムネイルを変更することができます<br>
-サムネイルとは、以下のようなメッセージに添付される画像のことです*<br>
+サムネイルとは、以下のようなメッセージに添付される画像のことです*
 
 
-![embedメッセージ例](https://dotup.org/uploda/dotup.org2459765.png "embedメッセージ例")
+<br>![embedメッセージ例](https://dotup.org/uploda/dotup.org2459765.png "embedメッセージ例")
 
 **注意:もし[Setting.txt]の行数を変更してしまうと、正常に[Setting.txt]が読み込まれなくなります**
 
