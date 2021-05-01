@@ -8,7 +8,7 @@ Discordのチャネルでワンナイト人狼をすることができるよう�
 4. main.pyを起動する
 
 ##ゲームの進行
-1. [下記のコマンド](#[-T j],[-T 人狼がしたい],[-T 人狼しようぜ])を打ち込み、
+1. [下記のコマンド](# [-T j],[-T 人狼がしたい],[-T 人狼しようぜ]<br></b>)を打ち込み、
 
 ## Setting.txtの使い方
 <img src="https://dotup.org/uploda/dotup.org2459758.png" alt="attach:cat" title="attach:cat" width="530" height="400">
