@@ -27,8 +27,7 @@ Discordのチャネルでワンナイト人狼をすることができるよう�
 このように、各サムネイルのデフォルトURLが貼られているのでこのURLを好みの画像URLに変更することでサムネイルを変更することができます<br>
 サムネイルとは、以下のようなメッセージに添付される画像のことです
 
-
-<br>![embedメッセージ例](https://dotup.org/uploda/dotup.org2459765.png "embedメッセージ例")
+![embedメッセージ例](http://drive.google.com/uc?export=view&id=1Ie8YKjd4Q42q_h7lkuv995OpiTMLANfy "embedメッセージ例")
 
 **注意:もし[Setting.txt]の行数を変更してしまうと、正常に[Setting.txt]が読み込まれなくなります**
 
