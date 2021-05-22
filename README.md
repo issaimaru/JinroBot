@@ -22,7 +22,8 @@ Discordのチャネルでワンナイト人狼をすることができるよう�
 9. 結果発表(人狼サイドの勝利か人間サイドの勝利、もしくは平和村で全員敗北または全員勝利の場合があります)
 
 ## Setting.txtの使い方
-<img src="https://drive.google.com/file/d/1SbqnN9ons4aqr6YttE_Eilf4tmsL_Ic6/view?usp=sharing" alt="attach:cat" title="attach:cat" width="700" height="250">
+<img src="http://drive.google.com/uc?export=view&id=1SbqnN9ons4aqr6YttE_Eilf4tmsL_Ic6" alt="Setting.txtの写真" title="Setting.txtの写真" width="539" height="398">
+
 このように、各サムネイルのデフォルトURLが貼られているのでこのURLを好みの画像URLに変更することでサムネイルを変更することができます<br>
 サムネイルとは、以下のようなメッセージに添付される画像のことです
 
