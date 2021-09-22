@@ -22,12 +22,12 @@ Discordのチャネルでワンナイト人狼をすることができるよう�
 9. 結果発表(人狼サイドの勝利か人間サイドの勝利、もしくは平和村で全員敗北または全員勝利の場合があります)
 
 ## Setting.txtの使い方
-<img src="http://drive.google.com/uc?export=view&id=1SbqnN9ons4aqr6YttE_Eilf4tmsL_Ic6" alt="Setting.txtの写真" title="Setting.txtの写真" width="539" height="398">
+<img src="https://user-images.githubusercontent.com/80198387/134374156-4d930566-acfa-4f7d-8110-d0e2e696e2b5.png" alt="Setting.txtの写真" title="Setting.txtの写真" width="539" height="398">
 
 このように、各サムネイルのデフォルトURLが貼られているのでこのURLを好みの画像URLに変更することでサムネイルを変更することができます<br>
 サムネイルとは、以下のようなメッセージに添付される画像のことです
 
-![embedメッセージ例](http://drive.google.com/uc?export=view&id=1Ie8YKjd4Q42q_h7lkuv995OpiTMLANfy "embedメッセージ例")
+![embedメッセージ例](https://user-images.githubusercontent.com/80198387/134374295-e8669026-d047-4cc4-8d28-1c915cc9b3a3.png "embedメッセージ例")
 
 **注意:もし[Setting.txt]の行数を変更してしまうと、正常に[Setting.txt]が読み込まれなくなります**
 
@@ -39,3 +39,7 @@ Discordのチャネルでワンナイト人狼をすることができるよう�
 
 ## 注意
 このコードは高専一年生(当時)が、Pythonを学習するために制作したものです。動作確認はしましたが、正常動作を保証しません。
+
+
+
+
